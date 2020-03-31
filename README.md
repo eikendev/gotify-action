@@ -36,7 +36,7 @@ This action has no outputs.
 Create a file `.github/workflows/main.yml` in your repository with the following contents.
 
 ```yaml
-name: Gotify Notification
+name: 'Gotify Notification'
 on: [push]
 jobs:
   build:
@@ -46,8 +46,8 @@ jobs:
     - name: Gotify Notification
       uses: eikendev/action-gotify@master
       env:
-      	gotify_api_base: ${{ secrets.gotify_api_base }}
-        gotify_app_token: ${{ secrets.gotify_app_token }}
+        gotify_api_base: '${{ secrets.gotify_api_base }}'
+        gotify_app_token: '${{ secrets.gotify_app_token }}'
         notification_title: 'Build Complete'
         notification_message: 'Your build was completed.'
 ```
