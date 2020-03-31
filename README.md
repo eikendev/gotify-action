@@ -45,9 +45,11 @@ jobs:
     - uses: actions/checkout@master
     - name: Gotify Notification
       uses: eikendev/action-gotify@master
-      env:
+      with:
         gotify_api_base: '${{ secrets.gotify_api_base }}'
         gotify_app_token: '${{ secrets.gotify_app_token }}'
         notification_title: 'Build Complete'
         notification_message: 'Your build was completed.'
 ```
+
+Do not forget to define the secrets so the action can complete successfully.

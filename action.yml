@@ -22,9 +22,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.gotify_api_base }}
-    - ${{ inputs.gotify_app_token }}
-    - ${{ inputs.notification_title }}
-    - ${{ inputs.notification_message }}
-    - ${{ inputs.notification_priority }}
