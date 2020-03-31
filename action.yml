@@ -1,0 +1,30 @@
+name: 'Gotify Notification'
+description: 'Send a notification via Gotify'
+branding:
+  icon: 'bell'
+  color: 'blue'
+inputs:
+  gotify_api_base:
+    description: 'The HTTP endpoint where the Gotify API is exposed'
+    required: true
+  gotify_app_token:
+    description: 'The token of the Gotify application'
+    required: true
+  notification_title:
+    description: 'The title of the Gotify notification'
+    required: true
+  notification_message:
+    description: 'The message of the Gotify notification'
+    default: ''
+  notification_priority:
+    description: 'The priority of the Gotify notification'
+    default: 4
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.gotify_api_base }}
+    - ${{ inputs.gotify_app_token }}
+    - ${{ inputs.notification_title }}
+    - ${{ inputs.notification_message }}
+    - ${{ inputs.notification_priority }}
